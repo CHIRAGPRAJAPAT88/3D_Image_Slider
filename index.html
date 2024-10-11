@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>3D Image Slider</title>
+          <link rel="stylesheet" href="style.css">
+</head>
+<body>
+          <div class="container">
+                    <div class="box">
+                              <span style="--i:1;"><img src="img/1.jpg" width="200px"></span>
+                              <span style="--i:2;"><img src="img/2.jpg" width="200px"></span>
+                              <span style="--i:3;"><img src="img/3.jpg" width="200px"></span>
+                              <span style="--i:4;"><img src="img/4.jpg" width="200px"></span>
+                              <span style="--i:5;"><img src="img/5.jpg" width="200px"></span>
+                              <span style="--i:6;"><img src="img/6.jpg" width="200px"></span>
+                              <span style="--i:7;"><img src="img/7.jpg" width="200px"></span>
+                              <span style="--i:8;"><img src="img/8.jpg" width="200px"></span>
+                    </div>
+                    <div class="btns">
+                              <div class="btn prev"></div>
+                              <div class="btn next"></div>
+                    </div>
+          </div>
+
+          <script>
+                    let prev = document.querySelector('.prev');
+                    let next = document.querySelector('.next');
+                    let box = document.querySelector('.box');
+
+                    let degress = 0;
+
+                    prev.addEventListener('click', function(){
+                              degress += 45;
+                              box.style = `transform: perspective(1000px) rotateY(${degress}deg)`;
+                    })
+
+                    next.addEventListener('click', function(){
+                              degress -= 45;
+                              box.style = `transform: perspective(1000px) rotateY(${degress}deg)`;
+                    })
+          </script>
+          </script>
+</body>
+</html>
